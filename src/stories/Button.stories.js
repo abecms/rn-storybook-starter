@@ -1,10 +1,27 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react-native'
-import { action } from '@storybook/addon-actions'
+import { Text } from 'react-native';
+
+import { storiesOf } from '@storybook/react-native';
+import { action } from '@storybook/addon-actions';
+import { linkTo } from '@storybook/addon-links';
+
+import CenterView from '../../storybook/stories/CenterView';
 
 import { Button } from '../components/Button'
+import { MyText } from '../components/MyText'
 
 storiesOf("Button", module)
-    .add("default", () => {
-        <Button onPress={action("tapped")}>Press me</Button>
-})
+    .addDecorator(getStory => <CenterView>{getStory()}</CenterView>)
+    .add('with text', () => (
+    <Button onPress={action('clicked-text')}>
+        <Text>Hello Button</Text>
+    </Button>
+    ))
+    .add('with some emoji', () => (
+    <Button onPress={action('clicked-emoji')}>
+        <Text>😀 😎 👍 💯</Text>
+    </Button>
+    ))
+    .add('with some GrG text', () => (
+        <MyText/>
+    ));
