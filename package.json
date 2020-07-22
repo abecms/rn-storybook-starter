@@ -12,6 +12,7 @@
     "storybook": "(adb reverse tcp:7007 tcp:7007 || true) && start-storybook"
   },
   "dependencies": {
+    "@react-native-community/async-storage": "^1.11.0",
     "prop-types": "^15.7.2",
     "react": "16.13.1",
     "react-native": "0.63.1",
@@ -32,7 +33,7 @@
     "jest": "^25.1.0",
     "metro-react-native-babel-preset": "^0.59.0",
     "react-dom": "^16.13.1",
-    "react-native-storybook-loader": "^2.0.1",
+    "react-native-storybook-loader": "^2.0.2",
     "react-test-renderer": "16.13.1"
   },
   "jest": {

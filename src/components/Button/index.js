@@ -93,6 +93,10 @@ const getContainerStyle = (props) => {
 };
 
 const renderChildren = (props) => {
+  if (props.children === '') {
+    styles.iconStyle = { ...styles.iconStyle, paddingRight: 0 }
+  }
+
   return (
     <>
       {props.loading && !props.disabled &&
@@ -103,9 +107,10 @@ const renderChildren = (props) => {
         <View style={styles.iconStyle}>
           {props.icon}
         </View>}
-      <Text style={StyleSheet.flatten([getTextStyle(props), props.textStyle])}>
-        {props.children}
-      </Text>
+      {props.children != '' &&
+        <Text style={StyleSheet.flatten([getTextStyle(props), props.textStyle])}>
+          {props.children}
+        </Text>}
     </>
   );
 };
@@ -115,6 +120,10 @@ export const Button = (props) => {
 
   const TouchableElement =
     Platform.OS === 'android' ? TouchableNativeFeedback : TouchableOpacity;
+  if (props.children === '') {
+    props.style = { ...props.style, padding: 10 }
+  }
+  
   return (
     <TouchableElement
       {...props}
@@ -164,7 +173,7 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-  children: 'Submit',
+  children: '',
   size: 'medium',
   length: 'long',
   width: 'medium',

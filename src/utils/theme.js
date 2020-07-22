@@ -1,13 +1,6 @@
 import colors from './colors';
 
 export const theme = {
-//   fontFamily: {
-//     light: 'Raleway-Light',
-//     regular: 'Raleway-Regular',
-//     bold: 'Raleway-Bold',
-//     boldItalic: 'Raleway-BoldItalic',
-//     extraBold: 'Raleway-ExtraBold',
-//   },
   fontSize: {
     xxsmall: 11,
     xsmall: 12.5,

@@ -54,7 +54,8 @@ storiesOf('Button', module)
           length="short"
           width="xlarge"
           size="small"
-        >
+          outline
+          transparent>
           Commander
         </Button>
       </View>
@@ -102,6 +103,12 @@ storiesOf('Button', module)
           Commander
         </Button>
       </View>
+      <Separator />
+      <Button
+        icon={<Feather name="user" size={24} color="white" />}
+        onPress={action('clicked-emoji')}
+        round>
+      </Button>
     </>
   ))
   .add('with some emoji', () => (
